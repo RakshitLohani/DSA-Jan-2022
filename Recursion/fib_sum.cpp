@@ -3,12 +3,10 @@ using namespace std;
 
 int fib(int n)
 {
-	static int sum=0;
 	
 	if(n<=1)
 	return n;
-	
-	return sum=sum+fib(n-1)+fib(n-2);
+	return fib(n-1)+fib(n-2);
 	
 }
 
@@ -16,6 +14,11 @@ int main()
 {
 	int i,n,x,sum=0;
 	cin>>n;
-	sum=fib(n);
+	for(i=1;i<=n;i++)
+	{
+		x=fib(i);
+		sum=sum+x;
+	}
 	cout<<sum;
+	return 0;
 }
